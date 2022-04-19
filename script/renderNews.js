@@ -11,9 +11,9 @@ const renderNews = (err, data) => {
     const newsItem = document.createElement('li');
     newsItem.className = 'news-item';
     newsItem.innerHTML = `
-       <img src="${item.urlToImage}" alt="${item.title}" class="news-image">
+       <img src="${item.urlToImage || 'image/not-photo.jpg'}" alt="${item.title}" class="news-image">
                     <h3 class="news-title">
-                        <a href="#" class="news-link">${item.title}</a>
+                        <a href=${item.url} target="_blank" class="news-link">${item.title}</a>
                     </h3>
                     <p class="news-description">${item.description}</p>
                     <div class="news-footer">
@@ -24,7 +24,6 @@ const renderNews = (err, data) => {
                     </div>
     `;
 
-    console.log(item.publishedAt.split('-').join('/').substring(0, item.publishedAt.length - 10));
     return newsItem;
   });
 
@@ -34,5 +33,3 @@ const renderNews = (err, data) => {
 
 export default renderNews;
 
-
-//newDate = rDate.split('-').reverse().join('.');

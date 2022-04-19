@@ -1,7 +1,7 @@
-const URL = 'https://newsapi.org/v2/top-headlines?country=ru';
+const URL = 'https://newsapi.org/v2/';
 //const URL = 'news.json';
 
-const fetchRequest = async (getParam, {
+const fetchRequest = async (param, {
   method = 'get',
   callback,
   body,
@@ -15,7 +15,7 @@ const fetchRequest = async (getParam, {
     if (body) options.body = JSON.stringify(body);
     if (headers) options.headers = headers;
 
-    const response = await fetch(`${URL}${getParam}`, options);
+    const response = await fetch(`${URL}${param}`, options);
 
     if (response.ok) {
       const data = await response.json();

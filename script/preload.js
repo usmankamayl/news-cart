@@ -1,11 +1,12 @@
 const preload = {
-  circle: `<svg width="322" height="322" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M119.088 185.106 82.568 106.6H72.47v97.943h12.452v-66.055l30.294 66.055h7.743l30.371-66.055v66.055h12.452V106.6h-10.098l-36.596 78.506Zm83.973 8.58v-34.243h45.859v-10.857h-45.859v-31.129h49.731V106.6h-62.183v97.943h63.777v-10.857h-51.325Z" fill="#010101"/><path d="M161.037 305.207c79.663 0 144.243-64.58 144.243-144.244C305.28 81.3 240.7 16.72 161.037 16.72c-79.664 0-144.244 64.58-144.244 144.243 0 79.664 64.58 144.244 144.244 144.244Z" stroke="url(#a)" stroke-width="33"/><defs><linearGradient id="a" x1="161.037" y1="16.72" x2="161.037" y2="305.207" gradientUnits="userSpaceOnUse"><stop stop-color="#FAD126" stop-opacity=".996"/><stop offset="1" stop-color="#FF544F"/></linearGradient></defs></svg>`,
+  circle: `<svg width="166" height="120" viewBox="0 0 166 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M135.5 30L105.5 60H128C128 84.825 107.825 105 83 105C75.425 105 68.225 103.125 62 99.75L51.05 110.7C60.275 116.55 71.225 120 83 120C116.15 120 143 93.15 143 60H165.5L135.5 30ZM38 60C38 35.175 58.175 15 83 15C90.575 15 97.775 16.875 104 20.25L114.95 9.3C105.725 3.45 94.775 0 83 0C49.85 0 23 26.85 23 60H0.5L30.5 90L60.5 60H38Z" fill="black"/>
+</svg>
+`,
   overlay: document.createElement('div'),
-
   show() {
-    this.overlay.classList.add('overlay');
-    this.overlay.innerHTML = this.circle;
-    document.body.append(this.overlay);
+    this.overlay.classList.add('preload');
+    document.querySelectorAll('.news-list')[0].append(this.overlay);
   },
   remove() {
     this.overlay.remove();
